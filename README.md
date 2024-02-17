@@ -12,3 +12,8 @@
 # Add to gitHub 
     - using a command called git push origin main
 
+# To get particular file from gitHub like zamam1.js 
+    - use a command called git pull 
+    - to pull a particular folder
+    
+
