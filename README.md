@@ -1,24 +1,20 @@
-=======
-# Clone a folder
-    - git clone
-# Create a folder
-    - zamam.js
-# Add to waiting Stage
-    - using a command called git add "Folder_name" or git add .
-    - to see status use git status
-# Add to git copy folder
-    - using a command called git commmit -m ""
-    - It push to git copy folder .git
-
-# Add to gitHub 
-    - using a command called git push origin main
-
-# To get particular file from gitHub like zamam1.js 
-    - use a command called git pull 
-    - to pull a particular folder
-    
->>>>>>> fe531680579801dce0d2adf9bba93062a37ad5f7
+# components 
+    - Header
+    - Blog
+    - About
+    - Contact
 
 # Day - 1:
     - Create a Header and Routes it!.
+# Day -2:
+    - Set a route between the components
     
+
+# Things are Done According to the way
+- Install a npm create vite@latest
+- Create a components
+- Set up tailwindcss
+- Design a Header components
+- import npm-react-router 
+- Set up Routes between the components
+- import Link to link a component
