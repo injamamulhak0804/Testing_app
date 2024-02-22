@@ -19,8 +19,8 @@ const Header = () => {
       </div>
 
       <div>
-          <button className='px-7 py-3 m-2 text-xs bg-green-500 rounded-lg font-semibold text-white'>SIGN IN</button>
-          <button className='px-7 py-3 text-xs text-lime-500 rounded-lg font-semibold  border border-black'>SIGN UP</button>
+          <button className='cursor-pointer px-7 py-3 m-2 text-xs bg-green-500 rounded-lg font-semibold text-white'>SIGN IN</button>
+          <button className='cursor-pointer px-7 py-3 text-xs text-lime-500 rounded-lg font-semibold  border border-black'>SIGN UP</button>
       </div>
     </div>
   )

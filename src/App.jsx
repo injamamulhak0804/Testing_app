@@ -6,6 +6,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Error from './components/Error'
 import { Route, Routes } from 'react-router-dom'
+import RestaurantList from './components/RestaurantList'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path = "/blog" element={<Blog />} />
             <Route path = "/about" element={<About />} />
             <Route path = "/contact" element={<Contact />} />
+            <Route path = "/resturants/:id" element = {<RestaurantList />} />
             <Route path = "*" element={<Error />} />
           </Routes>
           

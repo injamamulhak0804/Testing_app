@@ -11,6 +11,12 @@
 # Day - 3:
     - Make a API call and fetch the data from swiggy API.
 # Day - 4:
+    - Setting up a carousel 
+# Day - 5:
+    - setting up a card menu
+# Day - 6:
+    - Setting up a link for specific card elements
+# Day - 7:
     - 
     
 
@@ -23,3 +29,8 @@
 - Set up Routes between the components
 - import Link to link a component
 - make a API call and get the data
+- make carousel and design it.
+- make API for card menu in body component.
+- Design a card list and make responsive it.
+- Make a link for each card link components
+- Find a sepecific card that route into the new component
