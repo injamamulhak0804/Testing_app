@@ -17,7 +17,9 @@
 # Day - 6:
     - Setting up a link for specific card elements
 # Day - 7:
-    - 
+    - Make Card List
+# Day - 8:
+    - Make a card List items.
     
 
 # Things are Done According to the way
@@ -33,4 +35,13 @@
 - make API for card menu in body component.
 - Design a card list and make responsive it.
 - Make a link for each card link components
-- Find a sepecific card that route into the new component
+- Create a route for each specicific card
+- create a list of recommended items.
+- create a list up and down function.
+
+
+
+
+
+
+
