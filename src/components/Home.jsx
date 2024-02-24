@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import useResturantCarousel from '../utils/Hooks/useResturantCarousel'
-import { BODY_IMG, CAROUSEL_IMG } from '../utils/constants'
+import { BODY_IMG } from '../utils/constants'
 import RestaurantCards from './RestaurantCards';
-const Home = () => {
-  const {carousel, resturantCard} = useResturantCarousel();
+import RestaurantCarousel from './RestaurantCarousel';
+import ShimmerCards from '../Shimmer/ShimmerCards';
 
+const Home = () => {
+  const {resturantCard} = useResturantCarousel();
+
+  // console.log(carousel);
+
+  
   return (
     <>
 
@@ -25,16 +31,8 @@ const Home = () => {
 
    <div className='max-w-[900px] mx-auto'>
       <h2 className='font-poppins'>What's on your mind ?</h2>
-      <div className='flex overflow-x-auto max-w-[100%] mx-auto gap-x-5'>
-      {
-        carousel?.map((item)=>(
-          <div key={item.id}>
-            <img className='max-w-36' src={CAROUSEL_IMG + item.imageId} alt="" />
-          </div>
-        ))
-      }
-      </div>
 
+      <RestaurantCarousel />
 
       {/* Card Item  */}
 
@@ -42,6 +40,7 @@ const Home = () => {
         <h2 className='font-poppins my-5'>Zamam What's on your mind ? </h2>
         <div className='flex flex-wrap gap-5 justify-center'>
         {
+          resturantCard === null ? <ShimmerCards />:
           resturantCard?.map((items)=> (
             <Link to={"resturants/" + items.info.id} key={items.info.id}  className='no-underline text-black'>
               <RestaurantCards restaurant = {items} />

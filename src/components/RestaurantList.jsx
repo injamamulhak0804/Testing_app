@@ -14,7 +14,6 @@ const RestaurantList = () => {
   if(cardList?.cards ===  undefined) {return <ShimmerCardList />}
   const  {name, cuisines, avgRatingString, city} = cardList?.cards[2]?.card?.card?.info;
   const categories = cardList?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter((c)=> c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-  // console.log(categories);
   
   
   return (
