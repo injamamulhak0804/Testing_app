@@ -47,7 +47,7 @@
 - create a About Card design it!.
 - create a Contact Card.
 - create a Shimmer Component for both home and card list.
-
+- install npm i @reduxjs/toolkit and npm i react-redux.
 
 
 

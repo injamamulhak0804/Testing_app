@@ -9,12 +9,12 @@ const RestaurantList = () => {
   
   const id = useParams();
   const cardList = useCardList(id);
+  const [showItem, setShowItem] = useState(true)
 
 
   if(cardList?.cards ===  undefined) {return <ShimmerCardList />}
   const  {name, cuisines, avgRatingString, city} = cardList?.cards[2]?.card?.card?.info;
   const categories = cardList?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter((c)=> c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-  
   
   return (
     <div>
@@ -42,7 +42,11 @@ const RestaurantList = () => {
        <hr className='w-[100%] mx-auto my-10' />
        <div className='bg-slate-100 flex flex-col'>
        {
-        categories.map((item)=> <CardItemList key={item?.card?.card?.title} categories = {item?.card?.card} />)
+        categories.map((item, index)=> <CardItemList 
+        showItem = {index === showItem ? true : false} 
+        setShowItem = {()=>setShowItem(index)} 
+        key={item?.card?.card?.title} 
+        categories = {item?.card?.card} />)
        }
        </div>
       </div>

@@ -15,6 +15,7 @@ const Header = () => {
             <Link className='no-underline' to='/about'><li className='hover:text-lime-500'>About</li></Link>
             <Link className='no-underline' to='/blog'><li className='hover:text-lime-500'>Blog</li></Link>
             <Link className='no-underline' to='/contact'><li className='hover:text-lime-500'>Contact</li></Link>
+            <Link className='no-underline' to='/card'><li className='hover:text-lime-500'>Card</li></Link>
           </ul>
       </div>
 
