@@ -26,6 +26,8 @@
     - Make a Contact card.
 # Day - 11:
     - Make a Shimmer UI for Home and card List
+# Day - 12:
+    - Create a signup page and make a route of it. 
     
 
 # Things are Done According to the way

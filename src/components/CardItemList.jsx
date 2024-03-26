@@ -10,8 +10,8 @@ const CardItemList = ({categories, setShowItem, showItem}) => {
  
   return (
     <div>
-        <div  onClick={handleClick} className='px-5 bg-white  font-poppins text-sm mb-5 items-center cursor-pointer flex justify-between'>
-            <h3>{categories.title}</h3>
+        <div  onClick={handleClick} className='bg-white w-full font-poppins min-h-14 text-sm  items-center cursor-pointer flex justify-between'>
+            <h3>{categories.title}({categories.length})</h3>
             <img src={DOWN_ARROW} className='w-6' alt="" />
         </div>
         {showItem && <CardItemName items = {categories.itemCards} />}

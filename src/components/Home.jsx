@@ -7,6 +7,7 @@ import ShimmerCards from '../Shimmer/ShimmerCards';
 
 const Home = () => {
   const {resturantCard} = useResturantCarousel();
+  // console.log(resturantCard);
 
   // console.log(carousel);
 

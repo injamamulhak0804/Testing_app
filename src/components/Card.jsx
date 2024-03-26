@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardItemList from './CardItemList';
 import CardList from './CardList';
+import { clearItem } from '../utils/store/cardSlice';
 
 const Card = () => {
 
@@ -9,24 +10,29 @@ const Card = () => {
 
     const dispatch = useDispatch()
     const handleClick = () =>{
-        dispatch(clearCart())
+        dispatch(clearItem())
     }
     
 
   return (
     <div className="max-w-[70%] mx-auto">
-                <CardList items = {cartItems} />
+                {cartItems.length == 0 && <h1 className="font-poppins text-3xl pt-40 text-center">Your Cart is Empty</h1>}
+                {
+                  !cartItems.length == 0 && (
+                    <CardList items = {cartItems} />
+                  )
+                }
+
                 {/* // Clear Cart  */}
                 
                 {
                     !cartItems.length == 0 && (<button
                 onClick={handleClick}
-                 className="px-10 font-semibold m-10 hover:bg-yellow-400 py-2 bg-yellow-200 rounded-lg">
+                 className="cursor-pointer px-7 py-3 m-2 text-xs bg-green-500 rounded-lg font-semibold text-white ">
                     Clear Cart
                  </button>)
                 }
                 
-                {cartItems.length == 0 && <h1 className="text-3xl pt-40 text-center">Your Cart is Empty</h1>}
             </div>
   )
 }

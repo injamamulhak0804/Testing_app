@@ -10,6 +10,8 @@ import RestaurantList from './components/RestaurantList'
 import { Provider } from 'react-redux'
 import appStore from './utils/store/appStore'
 import Card from './components/Card'
+import CarouselItem from './components/CarouselItem'
+import SignIn from './components/SignIn'
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
             <Route path = "/about" element={<About />} />
             <Route path = "/contact" element={<Contact />} />
             <Route path = "/card" element={<Card /> } />
+            <Route path = "/signIn" element={<SignIn /> } />
             <Route path = "/resturants/:id" element = {<RestaurantList />} />
+            <Route path = "/carousel/:carouselid" element = {<CarouselItem />} />
             <Route path = "*" element={<Error />} />
           </Routes>
       </div>
