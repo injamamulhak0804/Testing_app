@@ -3,7 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <>
-       <div className="font-bold font-poppins max-w-[840px] mx-auto">
+       <div className="font-bold font-poppins max-w-[840px] mt-10 mx-auto">
                 <h1 className="text-3xl mb-10">Contact us</h1>
                 <div className="flex flex-col gap-6 max-w-[600px]">
                     <input type="text" className="border h-10 pl-2 placeholder:font-poppins" placeholder="Name" />

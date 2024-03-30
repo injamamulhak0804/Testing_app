@@ -7,12 +7,13 @@ import { useSelector } from 'react-redux';
 const Header = () => {
 
   const userName = useSelector((store)=> store?.user?.name);
-  console.log(userName);
 
   return (
+    
+     <>
     <div  className='flex justify-between items-center shadow-sm overflow-hidden h-24 px-10'>
       <div>
-          <Link to="/"><img src={HEADER_LOGO} className='w-28 cursor-pointer '/></Link>
+          <Link to="/"><img src={HEADER_LOGO} className='w-14 rounded-full cursor-pointer '/></Link>
       </div>
 
       <div>
@@ -29,13 +30,17 @@ const Header = () => {
           userName && (<p className='font-poppins duration-300'>Welcome {userName} 👋</p>)
         }
       </div>
-      <div>
-          {/* <button className='cursor-pointer px-7 py-3 m-2 text-xs bg-green-500 rounded-lg font-semibold text-white'>SIGN IN</button> */}
+      {
+        !userName && (
+          <div>
           <Link to='/signIn'>
           <button className='cursor-pointer px-7 py-3 text-xs hover:text-white hover:bg-green-500 text-lime-500 rounded-lg font-semibold  border border-black'>SIGN UP</button>
           </Link>
       </div>
+        )
+      }
     </div>
+     </>
   )
 }
 

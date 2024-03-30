@@ -6,18 +6,29 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Error from './components/Error'
 import { Route, Routes } from 'react-router-dom'
-import RestaurantList from './components/RestaurantList'
 import { Provider } from 'react-redux'
 import appStore from './utils/store/appStore'
-import Card from './components/Card'
-import CarouselItem from './components/CarouselItem'
+import Cart from './components/Cart'
 import SignIn from './components/SignIn'
+import RestaurantMenu from './components/RestaurantMenu'
+import Footer from './components/Footer'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
     <>
     <Provider store={appStore} >
       <div>
+      <Toaster
+							position="bottot-center"
+							reverseOrder={false}
+							gutter={30}
+							containerClassName="toaster-container"
+							toastOptions={{
+								className: "toaster-toast",
+								duration: 1500,
+							}}
+						/>
           <Header />
           {/* Route a Component */}
           <Routes>
@@ -25,12 +36,12 @@ function App() {
             <Route path = "/blog" element={<Blog />} />
             <Route path = "/about" element={<About />} />
             <Route path = "/contact" element={<Contact />} />
-            <Route path = "/card" element={<Card /> } />
+            <Route path = "/card" element={<Cart /> } />
             <Route path = "/signIn" element={<SignIn /> } />
-            <Route path = "/resturants/:id" element = {<RestaurantList />} />
-            <Route path = "/carousel/:carouselid" element = {<CarouselItem />} />
+            <Route path = "/restaurant/:resId" element = {<RestaurantMenu />} />
             <Route path = "*" element={<Error />} />
           </Routes>
+          <Footer/>
       </div>
       </Provider>
     </>

@@ -1,23 +1,21 @@
 import { Link } from 'react-router-dom';
-import useResturantCarousel from '../utils/Hooks/useResturantCarousel'
-import { BODY_IMG } from '../utils/constants'
-import RestaurantCards from './RestaurantCards';
-import RestaurantCarousel from './RestaurantCarousel';
-import ShimmerCards from '../Shimmer/ShimmerCards';
+import useAllRestaurants from "../utils/Hooks/useAllRestaurants"
+import Shimmer from './Shimmer'
+import RestaurantCard from './RestaurantCard';
+import RestaurantColletions from './RestaurantCollections';
+import { BODY_IMG } from '../utils/constants';
 
 const Home = () => {
-  const {resturantCard} = useResturantCarousel();
-  // console.log(resturantCard);
+  // const {resturantCard} = useResturantCarousel();
+  const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useAllRestaurants();
 
-  // console.log(carousel);
+    return allRestaurants?.length == 0 ? (
+		<Shimmer />
+	) : 
+	(
+		<>
 
-  
-  return (
-    <>
-
-    {/* Hero Section */}
-
-    <div className='max-w-[900px] mx-auto flex flex-wrap items-center x justify-between mb-28'>
+<div className='max-w-[900px] mx-auto flex flex-wrap items-center x justify-between mb-28'>
       <div className='mt-24'>
         <h1 className='font-poppins text-3xl md:text-4xl font-medium '>Make Your Party With</h1>
         <h1 className='font-poppins text-3xl md:text-4xl font-medium'><span className='text-lime-500'>Delicious</span> Dishes</h1>
@@ -28,37 +26,68 @@ const Home = () => {
       </div>
     </div>
 
-  {/* Secondary Section */}
+			
 
-   <div className='max-w-[900px] mx-auto'>
-      <h2 className='font-poppins'>What's on your mind ?</h2>
+			<div className="body-box-res mt-10 body-box pt-40">
+				<div className="">
+					<h2 className="text-2xl  font-semibold">
+						What's on Your Mind
+					</h2>
+					<div className="topBrand">
+						{allRestaurants[1].map((info) => {
+							return (							
+									<RestaurantColletions key={"collections" + info?.id} {...info} />	
+							);
+						})}
+					</div>
+					<hr className="topBrandHr" />
+				</div>
+				<div className="main-header-box">
+					<h2 className="main-card-title">
+						<span>{allRestaurants[2]?.title}</span>
+					</h2>
+					<div className="topBrand">
+						{allRestaurants[3].map((restaurant) => {
+							return (
+								<Link
+									to={"/restaurant/" + restaurant.info.id}
+									key={"allres" + restaurant.info.id}
+								>
+									<RestaurantCard {...restaurant.info} />
+								</Link>
+							);
+						})}
+					</div>
+					<hr className="topBrandHr" />
+				</div>
+				<div className="main-header-box">
+					<h2 className="main-card-title">
+						{allRestaurants[4]?.title}
+					</h2>
+					{filteredRestaurants?.length != 0 ? (
+						<div className="main-card">
+							{filteredRestaurants?.map((restaurant) => {
+								return (
+									<Link
+										to={
+											"/restaurant/" +
+											restaurant?.info?.id
+										}
+										key={"filter" + restaurant?.info?.id}
+										
+									>
+										<RestaurantCard {...restaurant.info} />
+									</Link>
+								);
+							})}
 
-      <RestaurantCarousel />
-
-      {/* Card Item  */}
-
-      <div>
-        <h2 className='font-poppins my-5'>Zamam What's on your mind ? </h2>
-        <div className='flex flex-wrap gap-5 justify-center'>
-        {
-          resturantCard === null ? <ShimmerCards />:
-          resturantCard?.map((items)=> (
-            <Link to={"resturants/" + items.info.id} key={items.info.id}  className='no-underline text-black'>
-              <RestaurantCards restaurant = {items} />
-            </Link>
-          ))
-        }
-        </div>
-      </div>
-
-      <center>
-        <button className='px-10 py-3 bg-transparent outline-none border rounded-sm text-md font-poppins cursor-pointer my-8'>Show More</button>
-      </center>
-   </div>
-
-
-  </>
-  )
+						</div>
+					) : null}
+				</div>
+			</div>
+		</>
+	);
+  
 }
 
 export default Home
