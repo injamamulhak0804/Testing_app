@@ -16,7 +16,7 @@ const useAllRestaurants = () => {
 
 			// Top resturant 
 			const topBrand = json?.data?.cards?.find((res) =>
-				res?.card?.card?.id?.includes("top_brands_for_you");
+				res?.card?.card?.id?.includes("top_brands_for_you")
 			);
 
 			// All the resturant - Title
