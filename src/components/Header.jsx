@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { HEADER_LOGO } from '../utils/constants'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { FiShoppingCart } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { supabase } from '../supabaseClient';

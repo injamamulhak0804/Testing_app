@@ -11,7 +11,7 @@ function RestaurantMenuInfo(card) {
 	const [showPopUp, setShowPopUp] = useState(false);
 	const [popItem, setPopItem] = useState(null);
 
-	// Redux Store --------------------------------
+	//  Redux Store -----------------------
 	
 	const itemsCart = useSelector((store) => store.cart);
 	const dispatch = useDispatch();

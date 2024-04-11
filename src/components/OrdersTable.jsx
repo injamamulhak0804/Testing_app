@@ -32,7 +32,7 @@
 
     return (
         <div>
-        <center><h1 className='text-xl py-2 font-bold'>Orders</h1></center>
+        <center><h1 className='text-xl py-2 font-semibold'>Orders</h1></center>
         <table>
             <thead>
             <tr>
@@ -52,6 +52,8 @@
                 </tr>
             ))}
             </tbody>
+
+
         </table>
         </div>
     );

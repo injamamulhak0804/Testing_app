@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import useAllRestaurants from "../utils/Hooks/useAllRestaurants"
+import useAllRestaurants from "../utils/Hooks/useAllRestaurants";
 import Shimmer from './Shimmer'
 import RestaurantCard from './RestaurantCard';
 import RestaurantColletions from './RestaurantCollections';

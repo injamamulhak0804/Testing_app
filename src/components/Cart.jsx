@@ -340,7 +340,7 @@ const Cart = () => {
 						</div>
 					</div>
 				</>
-			)}
+			)};
 			{pay ? (
 				<div className="cart-empty">
 					<img

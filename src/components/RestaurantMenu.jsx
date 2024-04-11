@@ -25,7 +25,8 @@ const RestaurantMenu = () => {
 		return <ShimmerMenu />;
 	}
 	return !restaurant || !resCart.name ? (
-		<div className="body-box res-not-page">
+		<>
+			<div className="body-box res-not-page">
 			{/* <img src={IMG_RESTAURANT_NOT_URL} /> */}
 			<h3 className="">Restaurant Not Found.</h3>
 			<p>Something went wrong.</p>
@@ -33,6 +34,7 @@ const RestaurantMenu = () => {
 				<button>GO BACK</button>
 			</Link>
 		</div>
+		</>
 	) : (
 		<div id="res-menu" className="body-box">
 			<RestaurantMenuProfile

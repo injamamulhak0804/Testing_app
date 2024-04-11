@@ -1,5 +1,5 @@
 import React from 'react'
-import { BANNER, CALENDER, EARTH, HOME } from '../utils/constants'
+import { BANNER, CALENDER, EARTH, HOME } from '../utils/constants';
 
 const About = () => {
   return (

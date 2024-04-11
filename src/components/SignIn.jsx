@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../utils/store/userSlice';
 import {  useNavigate } from 'react-router-dom';
-import { checkValidate } from "../utils/checkValidate"
+import { checkValidate } from "../utils/checkValidate";
 import { createClient } from '@supabase/supabase-js';
 import { supabase } from '../supabaseClient';
 

@@ -17,7 +17,7 @@ const useRestaurant = (resId) => {
 					menu?.card?.card["@type"]?.includes("food.v2.ItemCategory")
 				)
 			);
-			setRestaurant({ restInfo, restMenus });
+			setRestaurant({ restInfo, restMenus })
 		} catch (err) {
 			console.log(err);
 			setRestaurant(null);

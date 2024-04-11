@@ -12,7 +12,7 @@ const CartInfo = (item) => {
 
 
 	useEffect(()=>{
-		setItem(name)
+		setItem(name);
 	},[])
 	
 

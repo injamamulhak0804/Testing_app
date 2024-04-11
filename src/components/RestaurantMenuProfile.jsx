@@ -35,7 +35,7 @@ const RestaurantMenuProfile = (menuProfile) => {
 			<div id="res-menu-price">
 				<h4>
 					<i className="fa-regular fa-handshake"></i> {sla?.slaString}{" "}
-					&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<i className="fa-solid fa-indian-rupee-sign"></i>{" "}
 					{costForTwoMessage}
 				</h4>

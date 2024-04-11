@@ -9,7 +9,7 @@ const Footer = () => {
 						<h3>Food Home</h3>
 						<p>© 2024 Jack</p>
 						<p>Pvt. Ltd</p>
-						<p>+91 6369832561</p>
+						<p>+91 63698325XX</p>
 					</div>
 					<div className="social">
 						<h3>Social Links</h3>

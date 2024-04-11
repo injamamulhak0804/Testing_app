@@ -71,7 +71,7 @@ export const ShimmerCol = () => {
 										<div className="box-shimmer"></div>
 									</div>
 								);
-							})}
+							})};
 					</div>
 				</div>
 			</div>

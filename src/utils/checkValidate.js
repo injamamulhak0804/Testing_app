@@ -4,8 +4,8 @@ export const checkValidate = (email, password) => {
 
 
 
-    if (!isEmailValid) return "Email is not vaid"
-    if (!isPasswordValid) return "Password is not vaid"
+    if (!isEmailValid) return "Email is not vaid";
+    if (!isPasswordValid) return "Password is not vaid";
     
     return null
 }
