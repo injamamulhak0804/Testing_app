@@ -1,14 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCount, decreaseCount } from "../utils/store/cartSlice";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient";
 
 const CartInfo = (item) => {
+	
 
 	const { name, price, defaultPrice, id } = item[0];
+	const [items, setItem] = useState([]);
+
+
+	useEffect(()=>{
+		setItem(name)
+	},[])
+	
 
 	const count = item[1];
 	const dispatch = useDispatch();
 	const addFoodItem = (i) => {
+		console.log("clicked");
 		dispatch(increaseCount(i));
 	};
 	const removeFoodItem = (i) => {

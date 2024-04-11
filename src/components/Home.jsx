@@ -34,7 +34,7 @@ const Home = () => {
 						What's on Your Mind
 					</h2>
 					<div className="topBrand">
-						{allRestaurants[1].map((info) => {
+						{allRestaurants[1]?.map((info) => {
 							return (							
 									<RestaurantColletions key={"collections" + info?.id} {...info} />	
 							);

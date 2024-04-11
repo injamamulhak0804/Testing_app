@@ -13,6 +13,7 @@ import SignIn from './components/SignIn'
 import RestaurantMenu from './components/RestaurantMenu'
 import Footer from './components/Footer'
 import { Toaster } from 'react-hot-toast'
+import OrdersTable from './components/OrdersTable'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path = "/card" element={<Cart /> } />
             <Route path = "/signIn" element={<SignIn /> } />
             <Route path = "/restaurant/:resId" element = {<RestaurantMenu />} />
+            <Route path = "/orders" element={<OrdersTable />} />
             <Route path = "*" element={<Error />} />
           </Routes>
           <Footer/>

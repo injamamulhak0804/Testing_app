@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../utils/store/userSlice';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../firebaseConfig';
 import {  useNavigate } from 'react-router-dom';
 import { checkValidate } from "../utils/checkValidate"
+import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 
 
 const SignIn = () => {
@@ -15,19 +15,48 @@ const SignIn = () => {
     const navigate = useNavigate()
     const [errorMessage, setErrorMessage] = useState(null)
 
+    const [userData, setUserData] = useState([]);
+
+    useEffect(()=>{
+      getProducts();
+    },[])
+  
+    async function getProducts(){
+      try{
+        const {data, error} = await supabase.from("signup").select("*")
+        if(error) throw error
+        if(data != null){
+          setUserData(data)
+          console.log(userData);
+        }
+      }catch(error){
+        console.log(error);
+      }
+    }
     
     
     const handleSignUp = async() => {
       const message = checkValidate(name, password);
       setErrorMessage(message) // set a error message
-      const users = {name, password}
       if(!message){
-        dispatch(addUser({name: name, password: password})) // Adding to redux store 
-        addDoc (collection(db, "user"), users); // Adding to database
-        setName('')
-        setpassword('')
-        navigate("/")
+        const a = userData.find((e)=>{
+          return e.name == name
+        })
+        if(a) {
+          setErrorMessage("Alerady a user")
+        }else{
+          const {data, error} = await supabase.from("signup").insert({ // Adding to the supbase (DATABASE)
+            name: name,
+            password: password
+          })
+          dispatch(addUser({name: name, password: password})) // Adding to redux store 
+          
+          setName('')
+          setpassword('')
+          navigate("/")
+        }
       }else return;
+        
     }
 
   return (
